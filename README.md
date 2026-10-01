@@ -1,5 +1,17 @@
 # ComfyUI-LODTailor-Bake-Forger-AMD — Windows AMD / RX 9070 XT
 
+## ComfyUI ROCm installation video
+
+For a visual walkthrough of installing ComfyUI with ROCm, watch
+[TechChuckle — How to Run ComfyUI on ANY AMD GPU ROCm Setup + Image Generation Guide](https://www.youtube.com/watch?v=6LOqJdKe6zI&t=219s).
+The link opens at **3:39**, as supplied for this guide.
+
+Use the [comfyui-rocm project instructions](https://github.com/patientx-cfz/comfyui-rocm)
+alongside the video. After installing ComfyUI ROCm, return to this node's setup
+instructions. The precompiled node packages are tested for **RX 9070 XT / gfx1201**
+with the versions listed in the build guide; the video's broader GPU coverage
+does not establish compatibility for these precompiled nodes.
+
 ## Download and install
 
 **Use the green Code button → Download ZIP. This download contains the actual node files, full source and precompiled components.**
