@@ -4,13 +4,18 @@
 
 For a visual walkthrough of installing ComfyUI with ROCm, watch
 [TechChuckle — How to Run ComfyUI on ANY AMD GPU ROCm Setup + Image Generation Guide](https://www.youtube.com/watch?v=6LOqJdKe6zI&t=219s).
-The link opens at **3:39**, as supplied for this guide.
+The link opens at **3:39**.
 
-Use the [comfyui-rocm project instructions](https://github.com/patientx-cfz/comfyui-rocm)
-alongside the video. After installing ComfyUI ROCm, return to this node's setup
-instructions. The precompiled node packages are tested for **RX 9070 XT / gfx1201**
-with the versions listed in the build guide; the video's broader GPU coverage
-does not establish compatibility for these precompiled nodes.
+**To install the version used for these nodes, follow
+[the tested ComfyUI ROCm setup guide](TESTED_ROCM_SETUP.md).** It includes the
+recorded ComfyUI revision, pinned AMD runtime packages, a copy-and-paste version
+check, and the node installation steps for **RX 9070 XT / gfx1201**.
+
+The tested runtime is Python **3.12.9**, Torch
+**2.15.0a0+rocm10.2.0a20260926**, HIP **7.17.26384**, and ROCm SDK **10.2**.
+The installer normally selects newer nightly packages, so the video alone does
+not guarantee these versions. Use the pinned setup guide before installing the
+precompiled nodes, then complete the node's `PRECOMPILED_INSTALL.txt` steps.
 
 ## Download and install
 
