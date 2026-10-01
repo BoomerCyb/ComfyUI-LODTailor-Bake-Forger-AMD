@@ -140,7 +140,15 @@ def _resolve_blender_binary(path):
     Accept a full exe path OR a folder; always return the real executable.
     """
     candidate = (path or "").strip().strip('"').strip("'")
-    if not candidate:
+    if candidate in ("", "blender", "blender.exe"):
+        import shutil
+        from pathlib import Path
+        located = shutil.which("blender")
+        if located:
+            return located
+        install_root = Path(os.environ.get("ProgramFiles", "C:/Program Files")) / "Blender Foundation"
+        for executable in sorted(install_root.glob("Blender */blender.exe"), reverse=True):
+            return str(executable)
         return "blender"
 
     exe_name = "blender.exe" if sys.platform == "win32" else "blender"
@@ -260,6 +268,7 @@ def configure_cycles_devices(s):
                 device.use = device.type == backend or (s.hybrid_cpu_gpu_baking and device.type == "CPU")
 
             gpu_found = True
+            log("Cycles backend=" + backend + " | devices=" + ", ".join(d.name for d in prefs.devices if d.use))
             break
 
     if not gpu_found:

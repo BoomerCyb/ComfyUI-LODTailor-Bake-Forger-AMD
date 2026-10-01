@@ -1,0 +1,6 @@
+DOWNLOAD ZIP -> EXTRACT -> MOVE THE FOLDER CONTAINING __init__.py INTO custom_nodes.
+
+Install Blender 5.2 separately, configure its path, and select HIP in the node. Follow PRECOMPILED_INSTALL.txt.
+
+Read README.md and PRECOMPILED_INSTALL.txt before restarting ComfyUI.
+Tested only for RX 9070 XT/gfx1201 and the documented ROCm environment.
