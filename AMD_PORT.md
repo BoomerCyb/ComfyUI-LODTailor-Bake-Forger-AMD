@@ -1,13 +1,12 @@
 # Bake Forger AMD support
 
-## gfx1201 release scope
+## Experimental architecture selection
 
-This release targets Windows AMD **gfx1201**, tested on **RX 9070 XT**.
-The WTiVo, CuMesh and O-Voxel native builders retain their gfx1201 target;
-they do not automatically rebuild for other GPU architectures. Support for other
-AMD GPUs is not claimed. Bake Forger uses Blender device discovery and has no
-custom native build; its validation in this release is also limited to RX 9070 XT.
-Use the exact tested software environment described below and in AMD_PORT.md.
+This separate version detects an AMD GPU through the existing ROCm PyTorch
+interpreter and builds for its reported architecture. Only RX 9070 XT / gfx1201
+has prior native inference validation; other targets are experimental. Successful
+architecture detection does not establish SDK support, compilation or inference
+compatibility. Bake Forger continues to use Blender device discovery.
 
 Use the existing ComfyUI Python dependencies listed in requirements.txt and install
 Blender separately. The tested Blender version is 5.2. Place this repository folder
@@ -20,3 +19,7 @@ The actual six-map bake and GLB export passed at 64x64 and one sample, with hybr
 CPU disabled. Larger production bakes need validation on the user's meshes.
 The output/latest directory is cleaned by the existing node; choose the output
 folder deliberately. Original license and third-party notice files are retained.
+
+## Blender devices
+
+Bake Forger has no native build script or architecture override. Its HIP devices are selected by Blender.
