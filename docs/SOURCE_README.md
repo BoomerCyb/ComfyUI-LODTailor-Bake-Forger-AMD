@@ -1,23 +1,3 @@
-# ComfyUI-LODTailor-Bake-Forger-AMD
-
-## AMD / ROCm
-
-This fork keeps the original node interface and adds native HIP support.
-Use the ROCm PyTorch installation that runs ComfyUI and a matching HIP SDK.
-The source does not select a card model or impose a gfx1201 target. Native
-extensions use PyTorch's standard ROCm architecture targeting when built.
-An installed binary still needs to match its GPU target, Python and Torch runtime.
-Hardware support depends on ROCm/PyTorch; validation here covers RX 9070 XT.
-
-Run `install_requirements.bat` to check the environment and install Python dependencies.
-Bake Forger uses Blender Cycles HIP; it has no custom native extension to build.
-For prerequisites and manual commands, see [COMFYUI_ROCM_BUILD_GUIDE.md](COMFYUI_ROCM_BUILD_GUIDE.md).
-
-ComfyUI ROCm setup: [patientx-cfz/comfyui-rocm](https://github.com/patientx-cfz/comfyui-rocm).
-
-The original documentation follows. For AMD installation, use the instructions
-above and the ROCm build guide in place of the original CUDA installation steps.
-
 # LODTailor: Bake Forger
 
 A focused **high-to-low texture baking node for ComfyUI**.
