@@ -203,6 +203,9 @@ Bake Forger uses that work as a reference/source for the original baking stage, 
 
 ## AMD Edition Changes - 2026-10-03
 
+Blender executable discovery and HIP device reporting are retained. Blender
+provides Cycles HIP; no custom Torch GPU extension is built.
+
 - Uses ComfyUI's Python and reports installation failures before restarting.
 - Uses Blender Cycles HIP for AMD baking and installs the Python dependencies.
 - Supports group installation through [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD).
