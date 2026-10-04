@@ -1,5 +1,7 @@
 # ComfyUI-LODTailor-Bake-Forger-AMD
 
+> **First installation requires setup.** Installing the complete five-node AMD group includes a native build process for the other four nodes, which can take several minutes. Bake Forger itself installs Python dependencies and uses Blender Cycles HIP; it has no custom native extension to compile. Run `install_requirements.bat`, or let ComfyUI-Easy-Install-AMD run it automatically, and wait for the entire group to finish successfully before restarting ComfyUI.
+
 ## AMD / ROCm
 
 The installer uses ComfyUI's Python and stops if setup fails. When installing through EZi, wait for the entire node group to complete before restarting.
