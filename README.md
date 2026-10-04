@@ -6,7 +6,7 @@ The installer uses ComfyUI's Python and stops if setup fails. When installing th
 
 This fork uses Blender Cycles HIP for AMD GPU baking. It has no custom native extension to compile. Blender must be installed and available to the node.
 
-Run `install_requirements.bat` to check the environment and install Python dependencies.
+For manual installation, run `install_requirements.bat` to check the environment and install Python dependencies. ComfyUI-Easy-Install-AMD runs this automatically through its add-on menu.
 Bake Forger uses Blender Cycles HIP; it has no custom native extension to build.
 For prerequisites and manual commands, see [COMFYUI_ROCM_BUILD_GUIDE.md](COMFYUI_ROCM_BUILD_GUIDE.md).
 
@@ -136,11 +136,15 @@ Maps can be individually enabled or disabled.
 
 ## Installation
 
+### ComfyUI-Easy-Install-AMD
+
+In [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD), select **Easy Menu → Add-ons → BoomerCyb WTiVo AMD Nodes**. It downloads the nodes and runs their installers automatically. You do not need to run `install_requirements.bat` separately. Wait for all five nodes to finish; EZi restarts ComfyUI after the group completes successfully.
+
+### Manual installation
+
 1. Place this repository in `ComfyUI/custom_nodes/ComfyUI-LODTailor-Bake-Forger-AMD`.
 2. Close ComfyUI and run `install_requirements.bat` using ComfyUI's Python.
-3. Restart ComfyUI after installation completes. With the EZi group add-on, wait for all five nodes to finish.
-
-You can also install this node through **Easy Menu → Add-ons → BoomerCyb WTiVo AMD Nodes** in [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD).
+3. Restart ComfyUI after installation completes.
 
 ## Requirements
 
