@@ -8,7 +8,7 @@ This fork uses Blender Cycles HIP for AMD GPU baking. It has no custom native ex
 
 For manual installation, run `install_requirements.bat` to check the environment and install Python dependencies. ComfyUI-Easy-Install-AMD runs this automatically through its add-on menu.
 Bake Forger uses Blender Cycles HIP; it has no custom native extension to build.
-For prerequisites and manual commands, see [COMFYUI_ROCM_BUILD_GUIDE.md](COMFYUI_ROCM_BUILD_GUIDE.md).
+For prerequisites and manual commands, see [docs/AMD_BUILD.md](docs/AMD_BUILD.md).
 
 ComfyUI AMD installer: [BoomerCyb/ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD).
 
