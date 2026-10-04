@@ -25,7 +25,7 @@ Bake Forger was **enhanced and substantially reworked from the baking portion of
 
 The original script was a useful proof of the baking workflow, but it was built as a Blender Text Editor script with fixed assumptions. Bake Forger turns that baking stage into a configurable ComfyUI node and focuses heavily on the failure cases that matter in an automated high-to-low pipeline.
 
-The upstream MIT license and attribution are preserved in `licenses/AEON-UNITY-TOOLS-MIT.txt`.
+The upstream MIT license and attribution are preserved in `LICENSE` (section: AEON-UNITY-TOOLS-MIT.txt).
 
 ## What was enhanced
 
@@ -174,7 +174,7 @@ Then enable only the texture maps you actually need and choose their resolutions
 
 **LODTailor: Bake Forger** is released under the **GNU GPL v3 or later**.
 
-The project contains adapted/enhanced baking work originating from the MIT-licensed `hp_to_lp_bake.py` in Aeon Unity Tools. The upstream MIT attribution and license are preserved in the `licenses/` directory.
+The project contains adapted/enhanced baking work originating from the MIT-licensed `hp_to_lp_bake.py` in Aeon Unity Tools. The upstream MIT attribution and license are preserved in the third-party sections of the root `LICENSE`.
 
 GPLv3 permits commercial use, modification, redistribution, and sale, subject to the GPL's terms. The upstream MIT component is also permissive for commercial use, provided its notice is preserved.
 
@@ -182,11 +182,11 @@ External software is not bundled with this repository. When you install or redis
 
 ## Third-party licenses
 
-- `licenses/AEON-UNITY-TOOLS-MIT.txt` — upstream MIT license and attribution
-- `licenses/NUMPY-BSD-3-CLAUSE.txt` — NumPy notice
-- `licenses/PYTORCH-BSD-3-CLAUSE.txt` — PyTorch notice
-- `licenses/PILLOW-MIT-CMU.txt` — Pillow notice
-- `licenses/COMFYUI-GPL-3.0-NOTICE.txt` — ComfyUI notice
+- `LICENSE` (section: AEON-UNITY-TOOLS-MIT.txt) — upstream MIT license and attribution
+- `LICENSE` (section: NUMPY-BSD-3-CLAUSE.txt) — NumPy notice
+- `LICENSE` (section: PYTORCH-BSD-3-CLAUSE.txt) — PyTorch notice
+- `LICENSE` (section: PILLOW-MIT-CMU.txt) — Pillow notice
+- `LICENSE` (section: COMFYUI-GPL-3.0-NOTICE.txt) — ComfyUI notice
 - `NOTICE.txt` — concise project/third-party overview
 
 ## Credits

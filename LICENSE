@@ -672,3 +672,108 @@ may consider it more useful to permit linking proprietary applications with
 the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
+
+
+THIRD-PARTY LICENSE TEXTS AND NOTICES
+===================================
+Original component notices are preserved verbatim below. Each component retains its own terms.
+
+
+===== licenses/AEON-UNITY-TOOLS-MIT.txt =====
+
+MIT License
+
+Copyright (c) 2026 Martin Johnson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Upstream reference:
+https://github.com/mdj128/aeon-unity-tools/blob/main/hp_to_lp_bake.py
+
+
+===== licenses/COMFYUI-GPL-3.0-NOTICE.txt =====
+
+ComfyUI — GNU General Public License v3.0
+
+Project: https://github.com/Comfy-Org/ComfyUI
+
+Bake Forger is designed to run as a ComfyUI custom node and imports ComfyUI
+APIs. ComfyUI is not bundled in this package and remains under its own GPL-3.0
+license.
+
+
+===== licenses/NUMPY-BSD-3-CLAUSE.txt =====
+
+NumPy — BSD 3-Clause License
+
+Copyright (c) 2005-2025, NumPy Developers.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the NumPy Developers nor the names of any contributors
+   may be used to endorse or promote products derived from this software
+   without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+
+===== licenses/PILLOW-MIT-CMU.txt =====
+
+Pillow — MIT-CMU License
+
+The Python Imaging Library (PIL) is Copyright © 1997-2011 by Secret Labs AB
+and Copyright © 1995-2011 by Fredrik Lundh and contributors.
+Pillow is the friendly PIL fork. It is Copyright © 2010 by Jeffrey 'Alex'
+Clark and contributors.
+
+Pillow is licensed under the open source MIT-CMU License.
+Project: https://github.com/python-pillow/Pillow
+
+This package does not bundle Pillow. See the official Pillow LICENSE file for
+the complete current notice.
+
+
+===== licenses/PYTORCH-BSD-3-CLAUSE.txt =====
+
+PyTorch — BSD 3-Clause License
+
+PyTorch is released under the BSD 3-Clause license.
+Project: https://github.com/pytorch/pytorch
+
+This package does not bundle PyTorch. See the official PyTorch repository for
+its complete current license and third-party notices.
