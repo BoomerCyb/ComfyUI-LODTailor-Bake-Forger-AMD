@@ -25,7 +25,7 @@ def _run(command, env=None):
 
 
 def _install(env):
-    _run([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"], env)
+    _run([sys.executable, "-m", "pip", "install", "--no-build-isolation", "-r", "requirements.txt"], env)
     print("Bake Forger uses Blender Cycles HIP; there is no native extension to compile.")
 
 
@@ -46,7 +46,7 @@ def main():
         print("[Installer] Prerequisites checked; no modules were compiled or installed.")
         return 0
     _install(env)
-    print("[Installer] Installation completed. Restart ComfyUI.")
+    print("[Installer] Installation completed. If installing a node group, wait for all installers before restarting ComfyUI.")
     return 0
 
 

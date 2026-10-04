@@ -2,23 +2,16 @@
 
 ## AMD / ROCm
 
-This fork keeps the original node interface and adds native HIP support.
-Use the ROCm PyTorch installation that runs ComfyUI and a matching HIP SDK.
-The source does not select a card model or impose a gfx1201 target. Native
-extensions use PyTorch's standard ROCm architecture targeting when built.
-An installed binary still needs to match its GPU target, Python and Torch runtime.
-Hardware support depends on ROCm/PyTorch; validation here covers RX 9070 XT.
+The installer uses ComfyUI's Python and stops if setup fails. When installing through EZi, wait for the entire node group to complete before restarting.
+
+This fork uses Blender Cycles HIP for AMD GPU baking. It has no custom native extension to compile. Blender must be installed and available to the node.
 
 Run `install_requirements.bat` to check the environment and install Python dependencies.
 Bake Forger uses Blender Cycles HIP; it has no custom native extension to build.
 For prerequisites and manual commands, see [COMFYUI_ROCM_BUILD_GUIDE.md](COMFYUI_ROCM_BUILD_GUIDE.md).
 
-ComfyUI ROCm setup: [patientx-cfz/comfyui-rocm](https://github.com/patientx-cfz/comfyui-rocm).
+ComfyUI AMD installer: [BoomerCyb/ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD).
 
-The original documentation follows. For AMD installation, use the instructions
-above and the ROCm build guide in place of the original CUDA installation steps.
-
-# LODTailor: Bake Forger
 
 A focused **high-to-low texture baking node for ComfyUI**.
 
@@ -143,17 +136,11 @@ Maps can be individually enabled or disabled.
 
 ## Installation
 
-Place the folder in:
+1. Place this repository in `ComfyUI/custom_nodes/ComfyUI-LODTailor-Bake-Forger-AMD`.
+2. Close ComfyUI and run `install_requirements.bat` using ComfyUI's Python.
+3. Restart ComfyUI after installation completes. With the EZi group add-on, wait for all five nodes to finish.
 
-```text
-ComfyUI/custom_nodes/LODTailor-Bake-Forger
-```
-
-Restart ComfyUI and search for:
-
-**LOD Tailor: Bake Forger**
-
-Set `blender_path` to `blender` when Blender is available on your system PATH. Otherwise specify the full path to `blender.exe`.
+You can also install this node through **Easy Menu → Add-ons → BoomerCyb WTiVo AMD Nodes** in [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD).
 
 ## Requirements
 
@@ -210,38 +197,10 @@ https://github.com/mdj128/aeon-unity-tools/blob/main/hp_to_lp_bake.py
 
 Bake Forger uses that work as a reference/source for the original baking stage, then extends the workflow for ComfyUI automation, adaptive coverage, fallback recovery, map management, material handling, and production-oriented file I/O.
 
+## AMD Edition Changes - 2026-10-03
 
-## 🚀 SUPPORT MOSTAADTECH
+- Uses ComfyUI's Python and reports installation failures before restarting.
+- Uses Blender Cycles HIP for AMD baking and installs the Python dependencies.
+- Supports group installation through [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD).
 
-### ❤️ Enjoying this project / workflow?
-
-I’m **MostAadTech**, I create FREE ComfyUI workflows, local AI tools, 3D pipelines, and open-source projects.
-
-If this project or workflow helped you, **please consider following me or supporting my work**. It helps me keep building, testing, and releasing more free tools and workflows.
-
----
-
-## 💜 Support Me on Patreon
-
-👉 **[Support MostAadTech on Patreon](https://www.patreon.com/cw/MostafaAwad/membership)**
-
-Your support helps me spend more time developing **FREE AI tools, ComfyUI workflows, and 3D pipelines**.
-
----
-
-## 🌐 Follow MostAadTech
-
-* ▶️ **[YouTube](https://www.youtube.com/@MostAadTech)** — Tutorials, workflows & AI projects
-* 📸 **[Instagram](https://www.instagram.com/mostaadtech/)** — Projects, updates & behind the scenes
-* 𝕏 **[X / Twitter](https://x.com/MostAadTech)** — Updates, releases & experiments
-* 💻 **[GitHub](https://github.com/Mstafa-awad)** — Open-source projects & code
-
----
-
-### ⭐ One Follow Helps
-
-**Follow • Star • Share • Support**
-
-Every follow, GitHub star, share, and Patreon supporter helps me continue making **FREE tools for the AI community.**
-
-**Thank you for supporting MostAadTech! ❤️**
+Original node by [Mstafa-awad / MostAadTech](https://github.com/Mstafa-awad). AMD fork maintained by [BoomerCyb](https://github.com/BoomerCyb). Original license and third-party credits are retained.
