@@ -200,6 +200,20 @@ def _load_image_tensor(path):
     return torch.from_numpy(arr)[None, ...]
 
 
+def _integrated_gpu_names():
+    """Names of GPUs the ComfyUI Torch runtime reports as integrated."""
+    names = []
+    try:
+        for index in range(torch.cuda.device_count()):
+            props = torch.cuda.get_device_properties(index)
+            integrated = getattr(props, "is_integrated", getattr(props, "integrated", None))
+            if integrated == 1:
+                names.append(props.name)
+    except Exception:
+        pass
+    return names
+
+
 BLENDER_BAKE_SCRIPT = r'''
 import json
 import math
@@ -261,14 +275,21 @@ def configure_cycles_devices(s):
                 except Exception:
                     pass
 
-            if not [d for d in prefs.devices if d.type == backend]:
+            gpus = [d for d in prefs.devices if d.type == backend]
+            if not gpus:
                 continue
 
+            # A slow integrated GPU holds back a discrete one in a multi-device bake.
+            excluded = set(getattr(s, "exclude_gpu_names", None) or [])
+            chosen = [d for d in gpus if d.name not in excluded] or gpus
+            chosen_ids = {d.id for d in chosen}
             for device in prefs.devices:
-                device.use = device.type == backend or (s.hybrid_cpu_gpu_baking and device.type == "CPU")
+                device.use = device.id in chosen_ids or (s.hybrid_cpu_gpu_baking and device.type == "CPU")
 
             gpu_found = True
-            log("Cycles backend=" + backend + " | devices=" + ", ".join(d.name for d in prefs.devices if d.use))
+            skipped = [d.name for d in gpus if d.id not in chosen_ids]
+            log("Cycles backend=" + backend + " | devices=" + ", ".join(d.name for d in prefs.devices if d.use)
+                + (" | excluded integrated: " + ", ".join(skipped) if skipped else ""))
             break
 
     if not gpu_found:
@@ -1333,6 +1354,10 @@ class LODTailorBakeForger:
                     "default": True,
                     "tooltip": "Load baked PNGs into IMAGE outputs. Disable to reduce ComfyUI memory if you only need the GLB/files."
                 }),
+                "use_integrated_gpus": ("BOOLEAN", {
+                    "default": False,
+                    "tooltip": "Also bake on integrated GPUs. Off by default: an integrated GPU slows down a discrete GPU bake."
+                }),
             },
         }
 
@@ -1371,6 +1396,7 @@ class LODTailorBakeForger:
         **kw
     ):
         load_output_images = bool(kw.pop("load_output_images", True))
+        use_integrated_gpus = bool(kw.pop("use_integrated_gpus", False))
 
         import shutil
 
@@ -1397,6 +1423,7 @@ class LODTailorBakeForger:
         settings = dict(kw)
         settings["neutral_normal_color"] = _parse_color(neutral_normal_color, (0.5, 0.5, 1.0, 1.0))
         settings["material_base_color"] = _parse_color(material_base_color, (0.8, 0.8, 0.8, 1.0))
+        settings["exclude_gpu_names"] = [] if use_integrated_gpus else _integrated_gpu_names()
 
         with open(script_path, "w", encoding="utf-8") as fh:
             fh.write(BLENDER_BAKE_SCRIPT)
