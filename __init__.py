@@ -147,7 +147,11 @@ def _resolve_blender_binary(path):
         if located:
             return located
         install_root = Path(os.environ.get("ProgramFiles", "C:/Program Files")) / "Blender Foundation"
-        for executable in sorted(install_root.glob("Blender */blender.exe"), reverse=True):
+        # Newest version first; compare numerically so "Blender 10.0" beats "Blender 9.0".
+        def version_key(executable):
+            name = executable.parent.name.replace("Blender", "").strip()
+            return [int(part) if part.isdigit() else -1 for part in name.split(".")]
+        for executable in sorted(install_root.glob("Blender */blender.exe"), key=version_key, reverse=True):
             return str(executable)
         return "blender"
 
