@@ -1,5 +1,7 @@
 # ComfyUI-LODTailor-Bake-Forger-AMD
 
+> **Through [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD), no build tools are needed** when it has prebuilt native modules for the other four nodes (its default PyTorch bundle on a Radeon RX 5000 to RX 9000 series GPU or Ryzen integrated graphics): they install in seconds and are tested on your GPU.
+>
 > **First installation requires setup.** Installing the complete five-node AMD group includes a native build process for the other four nodes, which can take several minutes. Bake Forger itself installs Python dependencies and uses Blender Cycles HIP; it has no custom native extension to compile. Run `install_requirements.bat`, or let ComfyUI-Easy-Install-AMD run it automatically, and wait for the entire group to finish successfully before restarting ComfyUI.
 
 ## AMD / ROCm
@@ -140,7 +142,7 @@ Maps can be individually enabled or disabled.
 
 ### ComfyUI-Easy-Install-AMD
 
-In [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD), select **Easy Menu → Add-ons → BoomerCyb WTiVo AMD Nodes**. It downloads the nodes and runs their installers automatically. You do not need to run `install_requirements.bat` separately. Wait for all five nodes to finish; EZi restarts ComfyUI after the group completes successfully.
+In [ComfyUI-Easy-Install-AMD](https://github.com/BoomerCyb/ComfyUI-Easy-Install-AMD), select **Easy Menu → Add-ons → BoomerCyb WTiVo AMD Nodes**. It downloads the nodes and installs their prebuilt native modules when available for your PyTorch and GPU (no compiler needed), otherwise runs their installers to build them. You do not need to run `install_requirements.bat` separately. Wait for all five nodes to finish; EZi restarts ComfyUI after the group completes successfully.
 
 ### Manual installation
 
